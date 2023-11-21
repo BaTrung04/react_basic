@@ -1,11 +1,17 @@
 import { eventWrapper } from "@testing-library/user-event/dist/utils";
 import React from "react";
 import { compileString } from "sass";
+import ChildComponent from "./ChildComponents";
 
 class MyComponent extends React.Component {
     state = {
         firstName: "",
         LastName: "",
+        arrJobs: [
+            { id: "abcJob1", title: "Developer", salary: "500 $" },
+            { id: "abcJob2", title: "Testers", salary: "400 $" },
+            { id: "abcJob3", title: "Project managers", salary: "600 $" },
+        ],
     };
     /* 
     JSX => return block 
@@ -50,6 +56,13 @@ class MyComponent extends React.Component {
                     <input
                         type="submit"
                         onClick={(event) => this.handleSubmit(event)}
+                    />
+
+                    <ChildComponent
+                        name={this.state.firstName}
+                        age={"21"}
+                        address={"Bắc Ninh"}
+                        arrJobs={this.state.arrJobs}
                     />
                 </form>
             </>
