@@ -4,44 +4,54 @@ import { compileString } from "sass";
 
 class MyComponent extends React.Component {
     state = {
-        name: "",
-        channel: "Hoc react",
+        firstName: "",
+        LastName: "",
     };
     /* 
     JSX => return block 
     <react.Fragment></react.Fragment> // <></>
     */
-    handleOnChangeName = (event) => {
-        //merge
+    handleChangeFirstName = (event) => {
         this.setState({
-            name: event.target.value,
+            firstName: event.target.value,
         });
     };
-
-    handleClickButton = () => {
-        alert("Click me");
+    handleChangeLastName = (event) => {
+        this.setState({
+            LastName: event.target.value,
+        });
+    };
+    handleSubmit = (event) => {
+        event.preventDefault(); //ko tra lai website
+        console.log(">>> check data input: ", this.state);
     };
 
     render() {
         console.log(">> call render: ", this.state);
         return (
             <>
-                <div className="first">
+                <form>
+                    <label htmlFor="fname">First name:</label>
+                    <br />
                     <input
-                        value={this.state.name}
                         type="text"
-                        onChange={(event) => this.handleOnChangeName(event)}
+                        value={this.state.firstName}
+                        onChange={(event) => this.handleChangeFirstName(event)}
                     />
-                    hello my Component , My name is {this.state.name}
-                </div>
-                <div className="second">
-                    My youtube channel : {this.state.channel}
-                </div>
-                <div className="third">
-                    <button onClick={() => this.handleClickButton()}>
-                        Click me
-                    </button>
-                </div>
+                    <br />
+                    <label htmlFor="lname">Last name:</label>
+                    <br />
+                    <input
+                        type="text"
+                        value={this.state.LastName}
+                        onChange={(event) => this.handleChangeLastName(event)}
+                    />
+                    <br />
+                    <input
+                        type="submit"
+                        onClick={(event) => this.handleSubmit(event)}
+                    />
+                </form>
             </>
         );
     }
