@@ -1,5 +1,5 @@
 import React from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 class AddTodo extends React.Component {
     state = {
@@ -15,7 +15,7 @@ class AddTodo extends React.Component {
     handleClickAddTodo = () => {
         if (!this.state.title) {
             //undefined/null/empty => false
-            toast.info("Missing title!");
+            toast.error("Missing title!");
             return;
         }
         let todo = {
