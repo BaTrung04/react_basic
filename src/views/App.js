@@ -5,7 +5,7 @@ import ListTodo from "./Todos/ListTodo";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Nav from "./Nav/Nav";
-import Home from "./Example/home";
+import Home from "./Example/Home";
 
 import {
     BrowserRouter,
