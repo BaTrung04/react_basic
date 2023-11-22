@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 class AddComponent extends React.Component {
     state = {
@@ -18,7 +19,7 @@ class AddComponent extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault(); //ko tra lai website
         if (!this.state.title || !this.state.salary) {
-            alert("Missing required params");
+            toast.success("Submit sucess!!");
             return;
         }
         console.log(">>> check data input: ", this.state);
