@@ -16,6 +16,7 @@ class MyComponent extends React.Component {
     addNewJob = (job) => {
         //cach 1
         console.log(">>Check job from parent: ", job);
+        // setState cap nhat lai state xong re-render
         this.setState({
             arrJobs: [...this.state.arrJobs, job],
         });
@@ -38,6 +39,7 @@ class MyComponent extends React.Component {
     /* 
     JSX => return block 
     <react.Fragment></react.Fragment> // <></>
+    // props : property truyen du lieu react
     */
 
     render() {

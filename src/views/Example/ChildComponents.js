@@ -2,6 +2,7 @@ import { prettyFormat } from "@testing-library/react";
 import { eventWrapper } from "@testing-library/user-event/dist/utils";
 import React from "react";
 import { compileString } from "sass";
+import "./Demo.scss";
 
 class ChildComponent extends React.Component {
     state = {
@@ -29,7 +30,10 @@ class ChildComponent extends React.Component {
             <>
                 {showJobs === false ? (
                     <div>
-                        <button onClick={() => this.handleShowHide()}>
+                        <button
+                            className="btn-show"
+                            onClick={() => this.handleShowHide()}
+                        >
                             Show
                         </button>
                     </div>
