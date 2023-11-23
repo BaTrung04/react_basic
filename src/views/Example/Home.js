@@ -2,6 +2,7 @@ import React from "react";
 // dua ngdung ve trang chi dinh
 import { withRouter } from "react-router";
 import Color from "../HOC/Color";
+import logo from "../../assets/images/background.jpg";
 
 class Home extends React.Component {
     componentDidMount() {
@@ -12,8 +13,18 @@ class Home extends React.Component {
 
     // HOC: higher order component
     render() {
-        console.log(">> check props: ", this.props);
-        return <div>Hello world from Homepage by Bá Trung</div>;
+        return (
+            <>
+                <div>Hello world from Homepage by Bá Trung</div>
+
+                <div>
+                    <img
+                        src={logo}
+                        style={{ objectFit: "cover", width: "700px" }}
+                    />
+                </div>
+            </>
+        );
     }
 }
 

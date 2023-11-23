@@ -3,6 +3,7 @@ import { eventWrapper } from "@testing-library/user-event/dist/utils";
 import React from "react";
 import { compileString } from "sass";
 import "./Demo.scss";
+import { toast } from "react-toastify";
 
 class ChildComponent extends React.Component {
     state = {
@@ -18,6 +19,7 @@ class ChildComponent extends React.Component {
     handleOnclickDelete = (job) => {
         console.log(">>> check handleOnclickDelete:", job);
         this.props.deleteAJob(job);
+        toast.success("Delete success!");
     };
     render() {
         //let name = this.props.name;
