@@ -14,6 +14,7 @@ import {
     Link,
     useRouteMatch,
 } from "react-router-dom";
+import ListUser from "./Users/ListUser";
 
 /**
  * 2 components: class component / function component (function/ arrow)
@@ -36,6 +37,9 @@ function App() {
                         </Route>
                         <Route path="/about">
                             <MyComponent />
+                        </Route>
+                        <Route path="/user">
+                            <ListUser />
                         </Route>
                     </Switch>
                 </header>
