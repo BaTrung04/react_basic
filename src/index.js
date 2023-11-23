@@ -8,7 +8,12 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import rootReducer from "./store/reducers/rootReducer";
 
-const reduxStore = createStore(rootReducer);
+// Noi luu tru du lieu
+const reduxStore = createStore(
+    rootReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+// provider nguoi cung cap (Ham react-redux) áo khoác react // khởi động song song
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={reduxStore}>

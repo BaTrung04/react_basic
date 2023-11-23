@@ -22,7 +22,7 @@ class ListUser extends React.Component {
         });
     }
 
-    handleViewDataiUser = (user) => {
+    handleViewDataUser = (user) => {
         this.props.history.push(`/user/${user.id}`);
     };
 
@@ -40,7 +40,7 @@ class ListUser extends React.Component {
                                     className="child"
                                     key={item.id}
                                     onClick={() =>
-                                        this.handleViewDataiUser(item)
+                                        this.handleViewDataUser(item)
                                     }
                                 >
                                     {index + 1} - {item.first_name}{" "}

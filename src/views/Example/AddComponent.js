@@ -19,7 +19,7 @@ class AddComponent extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault(); //ko tra lai website
         if (!this.state.title || !this.state.salary) {
-            toast.success("Submit sucess!!");
+            toast.success("Submit success!!");
             return;
         }
         console.log(">>> check data input: ", this.state);
